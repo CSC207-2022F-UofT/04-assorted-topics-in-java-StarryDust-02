@@ -9,7 +9,6 @@
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 class DrivableMap {
     HashMap<String, Drivable> drivable_map;
@@ -22,16 +21,26 @@ class DrivableMap {
         drivable_map = new HashMap<>();
     }
 
-    public boolean addDrivable(String id, Drivable object) {
+    /* Write a method named addDrivable that takes a String (the ID)
+     *       and a Drivable object. If the ID string does not appear as a key
+     *       in drivable_map, then add the pair to drivable_map.
+     *       Return true if the Drivable was added to drivable_map.
+     */
+
+    public boolean addDrivable(String id, Drivable obj) {
         if (!drivable_map.containsKey(id)) {
-            drivable_map.put(id, object);
+            drivable_map.put(id, obj);
             return true;
         } else {
             return false;
         }
     }
 
-    /* You may want to use drivable_map.keys() or drivable_map.values() to
+
+    /* Write a method named hasFasterThan that takes an int (a speed)
+     *       and returns true iff there is at least one item in drivable_map
+     *       that has a maxSpeed >= the speed given.
+     * You may want to use drivable_map.keys() or drivable_map.values() to
      * iterate through drivable_map.
      */
     public boolean hasFasterThan (int speed) {
@@ -44,18 +53,13 @@ class DrivableMap {
     }
 
     public ArrayList<Tradable> getTradable() {
-        ArrayList<Tradable> returnList = new ArrayList<>();
+        ArrayList<Tradable> returnList = new ArrayList<Tradable>();
 
         for (Drivable item : drivable_map.values()) {
             if (item instanceof Tradable) {
                 returnList.add((Tradable) item);
             }
         }
-
         return returnList;
     }
-
-
-
-    
 }

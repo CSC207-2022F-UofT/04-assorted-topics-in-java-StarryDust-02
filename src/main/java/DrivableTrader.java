@@ -13,7 +13,7 @@
 import java.util.List;
 
 public class DrivableTrader extends Trader<Drivable> {
-    public DrivableTrader(List<Drivable> inv, List<Drivable> wishlist, int money) {
+    public DrivableTrader(int money, List<Drivable> inv, List<Drivable> wishlist) {
         super(inv, wishlist, money);
     }
     @Override

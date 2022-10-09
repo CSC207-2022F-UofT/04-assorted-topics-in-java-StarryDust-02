@@ -13,11 +13,9 @@
 import java.util.List;
 
 public class DrivableTrader extends Trader<Drivable> {
-    public DrivableTrader(int money) {
-        super(money);
+    public DrivableTrader(List<Drivable> inv, List<Drivable> wishlist, int money) {
+        super(inv, wishlist, money);
     }
-
-
     @Override
     public int getSellingPrice(Drivable obj) {
         if (obj instanceof Tradable) {
